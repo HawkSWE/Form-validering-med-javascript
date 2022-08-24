@@ -15,6 +15,10 @@ form.addEventListener('submit', (e) => {
     messages.push('Email is required')
   }
 
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false){
+    messages.push('Enter a valid email')
+  }
+
   if (password.value === '' || password.value == null) {
     messages.push('Password is required')
   }
