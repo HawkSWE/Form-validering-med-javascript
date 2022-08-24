@@ -2,6 +2,7 @@ const name = document.getElementById('name')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 const conpass = document.getElementById('confirm_password')
+const terms = document.getElementById('terms')
 const form = document.getElementById('form')
 const fel = document.getElementById('fel')
 
@@ -33,6 +34,10 @@ form.addEventListener('submit', (e) => {
 
   if (password.value !== conpass.value){
     messages.push('Password and confirm password need to be the same')
+  }
+
+  if (terms.checked == false){
+    messages.push('You need to agree to the terms')
   }
 
   if (messages.length > 0) {
