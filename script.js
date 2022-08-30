@@ -1,3 +1,8 @@
+function validera_email(email) {
+  var mönster = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return mönster.test(email);
+}
+
 const name = document.getElementById('name')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
@@ -16,7 +21,7 @@ form.addEventListener('submit', (e) => {
     messages.push('Email is required')
   }
 
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false){
+  if (!validera_email(email.value)){
     messages.push('Enter a valid email')
   }
 
