@@ -52,7 +52,7 @@ form.addEventListener('submit', (e) => {
     messages.push('You need to agree to the terms')
   }
   // Kollar om några fel ovan har skett och om det har skett så stoppar den submiten och meddelar användaren om felen.
-  if (messages.length > 0) {
+  else if (messages.length > 0) {
     e.preventDefault()
     fel.innerText = messages.join(', ')
   }
